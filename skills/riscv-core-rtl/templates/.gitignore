@@ -1,0 +1,14 @@
+# Generated artifacts
+sim/
+sim_act/
+test/build/
+*.vcd
+*.fst
+*.log
+obj_dir/
+
+# Editor
+.DS_Store
+*.swp
+*~
+__pycache__/
