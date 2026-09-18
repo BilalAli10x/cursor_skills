@@ -16,6 +16,7 @@ Independent. Target is whatever core path the user named. Do not assume `riscv-c
 - No clarifying questions.
 - Commit in the **DUT repo** only: `skill(dhrystone-test): add C99 Dhrystone`.
 - Do not invent printf/UART. Wire to the DUT’s existing output.
+- If `riscv64-unknown-elf-gcc` / `riscv32-unknown-elf-gcc` is missing, follow `riscv-gcc-setup` first. Do not compile GCC.
 
 ## Steps
 

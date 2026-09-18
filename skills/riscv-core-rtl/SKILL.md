@@ -22,6 +22,7 @@ Read [reference-microarch.md](reference-microarch.md) before writing RTL. Copy f
 - Never overwrite `silver_cpu1b` unless the user named it.
 - Commit in the **new or edited core repo** only: `skill(riscv-core-rtl): ...`.
 - If Verilator is missing or `< 5.021`, follow the `verilator-setup` skill first, then continue.
+- If `riscv32-unknown-elf-gcc` / `riscv64-unknown-elf-gcc` is missing, follow `riscv-gcc-setup` first, then continue. Do not compile GCC.
 
 ## Mode A — new core
 
@@ -50,8 +51,6 @@ Parse the prompt. Defaults if omitted: **5-stage**, no interrupts, no debug.
 - RV32 vs RV64 → pkg name, `XLEN`, `-march`/`-mabi` (`ilp32` vs `lp64`)
 - Extensions I/M/A/C/Zicsr independently
 - Extra ports (`irq`, debug) only if asked
-
-If `riscv32-unknown-elf-gcc` / `riscv64-unknown-elf-gcc` is missing, stop with a short install hint. Do not build a toolchain.
 
 ### 3. RTL
 

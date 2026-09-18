@@ -19,6 +19,9 @@ Apply these on every skill run. Each SKILL.md also inlines the short form.
 - Do not `git push` and do not open a PR unless the user asked.
 - Do not skip hooks. Do not amend unless the user asked.
 
-## Toolchain hole
+## Toolchain
 
-RISC-V GCC is not a skill. If `riscv64-unknown-elf-gcc` or `riscv32-unknown-elf-gcc` is required and missing, stop with a short install hint rather than building a toolchain from source.
+If a setup skill exists for a missing tool, follow it. Do not improvise installs.
+
+- Verilator missing or older than 5.021 → `verilator-setup`
+- `riscv64-unknown-elf-gcc` / `riscv32-unknown-elf-gcc` missing → `riscv-gcc-setup`. Do not compile GCC from source.

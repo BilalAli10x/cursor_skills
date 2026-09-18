@@ -19,6 +19,7 @@ Cursor reads `.cursor/skills/*/SKILL.md`. From here, invoke skills with natural 
 | Skill | When to use |
 | ----- | ----------- |
 | [verilator-setup](skills/verilator-setup/SKILL.md) | Verilator is missing or too old. Any workspace (CVA6, Ibex, generated core). |
+| [riscv-gcc-setup](skills/riscv-gcc-setup/SKILL.md) | `riscv64-unknown-elf-gcc` is missing. Pinned official prebuilt — do not compile GCC. |
 | [riscv-core-rtl](skills/riscv-core-rtl/SKILL.md) | Design or extend a Silver-style RISC-V core (stage count + ISA). |
 | [dhrystone-test](skills/dhrystone-test/SKILL.md) | Add Dhrystone to a named core after inspecting that core’s output mechanism. |
 | [riscv-arch-test-config](skills/riscv-arch-test-config/SKILL.md) | Add `config/cores/<family>/<config>/` to the **riscv-arch-test** repo (including all CVA6 configurations). |
@@ -33,6 +34,7 @@ Shared rules: [shared/conventions.md](shared/conventions.md).
 Skills may call each other only when something is missing:
 
 - `riscv-core-rtl` follows `verilator-setup` if Verilator is not on PATH.
+- `riscv-core-rtl` follows `riscv-gcc-setup` if `riscv64-unknown-elf-gcc` is not on PATH.
 - `riscv-arch-test-integrate` follows `riscv-arch-test-config` if the config directory does not exist yet.
 
 “Design RV64IMA” does not require riscv-arch-test. “Integrate riscv-arch-test to cva6 configuration cv64a6_imafdc_sv39_config” does not require `riscv-core-rtl`.

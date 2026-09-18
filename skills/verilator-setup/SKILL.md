@@ -31,7 +31,7 @@ Independent workspace tool. Does not create a core. Works in any workspace (CVA6
 WORKSPACE="<workspace-root>" bash "<this-skill>/scripts/install-verilator.sh"
 ```
 
-4. Prepending `PATH` is done by the script (idempotent `~/.bashrc` block plus a `tools/env.sh`).
+4. Prepending `PATH` is done by the script (idempotent `~/.bashrc` block plus a `tools/env.sh` block). Do not overwrite RISC-V GCC env entries.
 5. Git:
    - `mkdir -p "$WORKSPACE/tools"`
    - If `tools/` is not a git repo, `git init` there.
